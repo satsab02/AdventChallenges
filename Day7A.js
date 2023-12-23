@@ -82,15 +82,17 @@ function sortHands(hand1, hand2){
         return numericMap[hand1[0][4]] - numericMap[hand2[0][4]]
     }else return 0
 }
-fiveOfKind.sort(sortHands);
-fourOfKind.sort(sortHands);
-fullHouse.sort(sortHands);
-threeOfkind.sort(sortHands);
-twoPair.sort(sortHands);
-onePair.sort(sortHands);
-highCard.sort(sortHands);
+fiveOfKindSorted = fiveOfKind.sort(sortHands).reverse();
+fourOfKindSorted = fourOfKind.sort(sortHands).reverse();
+fullHouseSorted = fullHouse.sort(sortHands).reverse();
+threeOfKindSorted = threeOfkind.sort(sortHands).reverse();
+twoPairSorted = twoPair.sort(sortHands).reverse();
+onePairSorted = onePair.sort(sortHands).reverse();
+highCardSorted = highCard.sort(sortHands).reverse();
 
-const answerArray = [...fiveOfKind, ...fourOfKind, ...fullHouse, ...threeOfkind, ...twoPair, ...onePair, ...highCard];
+console.log(fourOfKindSorted[0])
+
+const answerArray = [...fiveOfKindSorted, ...fourOfKindSorted, ...fullHouseSorted, ...threeOfKindSorted, ...twoPairSorted, ...onePairSorted, ...highCardSorted];
 
 let answer = 0;
 for (i = 0; i<answerArray.length; i++){
